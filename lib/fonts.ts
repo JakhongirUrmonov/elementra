@@ -1,5 +1,4 @@
 import localFont from 'next/font/local';
-import { Playfair_Display } from 'next/font/google';
 
 export const farabee = localFont({
   src: [
