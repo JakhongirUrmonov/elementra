@@ -14,38 +14,16 @@ type ContactFormData = {
 };
 
 export function Contact() {
-  const { register, handleSubmit, reset, formState: { isSubmitting } } = useForm<ContactFormData>();
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (res.ok) {
-        setSubmitStatus("success");
-        reset();
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch {
-      setSubmitStatus("error");
-    }
-  };
 
   return (
     <>
       <section id="Контакты" className="relative w-full bg-parchment flex flex-col md:flex-row min-h-[800px]">
         {/* LEFT COLUMN — Contact Info */}
-        <div className="relative w-full md:w-1/2 bg-ink p-8 md:p-16 flex flex-col items-center justify-center overflow-hidden">
+        <div className="relative w-full md:w-1/2 bg-ink p-8 md:p-16 flex flex-col items-center justify-center overflow-hidden shrink-0">
           <FadeUp delay={0.1} className="relative z-10 w-full max-w-md flex flex-col items-center">
             <OrnamentCorner position="tl" size={100} opacity={0.3} />
             <OrnamentCorner position="tr" size={100} opacity={0.3} />
-            <OrnamentCorner position="bl" size={100} opacity={0.3} />
-            <OrnamentCorner position="br" size={100} opacity={0.3} />
 
             <Image src="/media/logo.png" alt="Logo" width={72} height={72} className="mb-6 invert" />
             <h2 className="font-canela text-3xl md:text-[32px] text-white text-center mb-4">
@@ -75,37 +53,11 @@ export function Contact() {
               <span>🇬🇧 English</span>
             </div>
 
-            {/* Contact Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-4 relative z-20">
-              <input
-                {...register("name", { required: true })}
-                placeholder="Ваше имя"
-                className="w-full bg-parchment text-ink font-sans p-3 border border-crimson focus:outline-none focus:ring-1 focus:ring-crimson placeholder-ink/50"
-              />
-              <input
-                {...register("contact", { required: true })}
-                placeholder="Телефон или Email"
-                className="w-full bg-parchment text-ink font-sans p-3 border border-crimson focus:outline-none focus:ring-1 focus:ring-crimson placeholder-ink/50"
-              />
-              <textarea
-                {...register("message", { required: true })}
-                placeholder="Сообщение или пожелания"
-                rows={4}
-                className="w-full bg-parchment text-ink font-sans p-3 border border-crimson focus:outline-none focus:ring-1 focus:ring-crimson placeholder-ink/50 resize-none"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-crimson text-white font-canela text-lg py-4 hover:bg-crimsonDark transition-colors disabled:opacity-70 mt-2"
-              >
-                {isSubmitting ? "Отправка..." : submitStatus === "success" ? "Отправлено!" : "Отправить"}
-              </button>
-            </form>
           </FadeUp>
         </div>
 
         {/* RIGHT COLUMN — Map */}
-        <div className="relative w-full md:w-1/2 min-h-[500px] h-full bg-parchmentDark">
+        <div className="relative w-full md:w-1/2 min-h-[500px] bg-parchmentDark shrink-0">
           <FadeUp delay={0.3} className="absolute inset-0 w-full h-full">
             {/* Custom Map Filter to match parchment tone */}
             <iframe

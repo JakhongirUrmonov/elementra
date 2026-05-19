@@ -3,6 +3,7 @@ import { farabee, farabeeHeading } from "@/lib/fonts";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import Script from "next/script";
 
 export const viewport: Viewport = {
   themeColor: "#7B1015",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <div id="main">
           {children}
         </div>
+        <Script src="https://w1402305.alteg.io/widgetJS" strategy="lazyOnload" />
       </body>
     </html>
   );

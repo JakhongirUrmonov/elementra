@@ -35,6 +35,20 @@ const horsesData = [
     description: "Под обманчиво капризной внешностью скрывается крепкий темперамент. Рабочая машина и идеальный компаньон для долгих выездов в поля.",
     image: "/media/horses/solomina.jpg",
   },
+  {
+    name: "Сифра",
+    breedAge: "Спортивная голландская пони • 14 лет",
+    suitability: "Для детей",
+    description: "Добрая, бережная и талантливая в конкуре. Изящная на вид, но очень сильная, работоспособная и с великолепным темпераментом. Подходит для малышей и детей, которые хотят расти дальше — в выездке, конкуре, получить лицензию ZZVE. Также участвует в детских и семейных фотосессиях.",
+    image: "/media/horses/sifra.JPG",
+  },
+  {
+    name: "Флирт",
+    breedAge: "Чешский теплокровный • 17 лет",
+    suitability: "Универсальный",
+    description: "Мудрый учитель, надежный партнер и очень ласковый друг. Флирт потрясающе выезжен, безопасен, с красивыми движениями. Это шанс перейти на новый уровень: подготовка к ZZVJ, более тонкая работа верхом и первые шаги перед покупкой собственной лошади.",
+    image: "/media/horses/flirt.jpg",
+  },
 ];
 
 export function Horses() {
@@ -102,45 +116,48 @@ export function Horses() {
           {horsesData.map((horse, idx) => (
             <div
               key={idx}
-              className="group flex-shrink-0 snap-center flex flex-col relative w-[90vw] md:w-[480px] h-[580px] transition-transform duration-500 ease-out hover:scale-[1.02] bg-white cursor-pointer shadow-sm hover:shadow-xl"
+              className="group flex-shrink-0 snap-center flex flex-col relative w-[78vw] sm:w-[320px] md:w-[420px] h-[480px] sm:h-[520px] md:h-[800px] transition-transform duration-500 ease-out md:hover:scale-[1.02] bg-white cursor-pointer shadow-sm hover:shadow-xl overflow-hidden"
             >
               {/* IMAGE AREA */}
-              <div className="relative w-full h-[65%] overflow-hidden">
+              <div className="relative w-full aspect-[3/4] overflow-hidden flex-shrink-0">
                 <Image
                   src={horse.image}
                   alt={horse.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 90vw, 480px"
+                  className="object-cover transition-transform duration-700 md:group-hover:scale-105"
+                  sizes="(max-width: 768px) 78vw, 420px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent pointer-events-none" />
                 <OrnamentCorner position="tr" size={80} opacity={0.5} />
               </div>
 
               {/* INFO AREA */}
-              <div className="relative w-full h-[35%] bg-crimson p-8 flex flex-col justify-end overflow-hidden">
+              <div className="absolute bottom-0 left-0 w-full h-[180px] group-hover:h-[280px] md:h-[240px] md:group-hover:h-[320px] bg-crimson p-6 md:p-8 flex flex-col justify-start overflow-hidden transition-all duration-500 ease-out shadow-lg">
                 {/* Hover decorative rule */}
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-[#A01820] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
                 
-                <div className="mb-auto flex justify-between items-start">
-                  <div>
-                    <h3 className="font-canela text-3xl md:text-[36px] text-white italic mb-1">
+                <div className="flex justify-between items-start gap-4 mb-4 flex-shrink-0">
+                  <div className="min-w-0">
+                    <h3 className="font-canela text-2xl md:text-3xl text-white italic mb-1 truncate">
                       {horse.name}
                     </h3>
-                    <p className="font-sans text-[13px] text-white/70 tracking-[0.1em] uppercase">
+                    <p className="font-sans text-[11px] md:text-[13px] text-white/70 tracking-[0.1em] uppercase">
                       {horse.breedAge}
                     </p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 flex items-center">
-                    <span className="font-sans text-[11px] text-white tracking-wider uppercase whitespace-nowrap">
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 flex items-center flex-shrink-0">
+                    <span className="font-sans text-[10px] md:text-[11px] text-white tracking-wider uppercase whitespace-nowrap">
                       {horse.suitability}
                     </span>
                   </div>
                 </div>
 
-                {/* Description (expands on hover) */}
-                <div className="mt-4">
-                  <p className="font-sans text-[14px] text-white/85 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                {/* Description (expands and scrolls on hover if very long) */}
+                <div 
+                  className="flex-1 overflow-y-auto pr-1"
+                  style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                  <p className="font-sans text-[13px] md:text-[14px] text-white/85 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                     {horse.description}
                   </p>
                 </div>
