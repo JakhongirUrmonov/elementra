@@ -1,17 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
 import { OrnamentDivider } from "@/components/ui/OrnamentDivider";
 import { OrnamentCorner } from "@/components/ui/OrnamentCorner";
 import { FadeUp } from "@/components/ui/FadeUp";
 
-type ContactFormData = {
-  name: string;
-  contact: string;
-  message: string;
-};
 
 export function Contact() {
 
