@@ -30,7 +30,7 @@ export function Contact() {
               <InfoRow icon={<PhoneIcon />} text="778-071-177" />
               <InfoRow 
                 icon={<InstagramIcon />} 
-                text={<a href="https://www.instagram.com/elementa.riding.academy" target="_blank" rel="noopener noreferrer" className="hover:text-crimson transition-colors">@elementa.riding.academy</a>} 
+                text={<a href="https://www.instagram.com/elementa.riding.academy/" target="_blank" rel="noopener noreferrer" className="hover:text-crimson transition-colors">@elementa.riding.academy</a>} 
               />
               <InfoRow icon={<ClockIcon />} text="Без выходных, только по записи" />
             </div>
@@ -83,7 +83,7 @@ export function Contact() {
             <a href="#" className="font-sans text-[13px] text-muted hover:text-crimson transition-colors underline underline-offset-4">
               Политика конфиденциальности
             </a>
-            <a href="https://www.instagram.com/elementa.riding.academy" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-muted hover:text-crimson transition-colors underline underline-offset-4">
+            <a href="https://www.instagram.com/elementa.riding.academy/" target="_blank" rel="noopener noreferrer" className="font-sans text-[13px] text-muted hover:text-crimson transition-colors underline underline-offset-4">
               Instagram
             </a>
           </div>

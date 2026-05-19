@@ -74,7 +74,7 @@ export function Header() {
 
         <div className="hidden md:flex items-center">
           <a
-            href="https://www.instagram.com/elementa.riding.academy"
+            href="https://www.instagram.com/elementa.riding.academy/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-white/80 transition-colors"
@@ -133,7 +133,7 @@ export function Header() {
             </nav>
             
             <motion.a
-              href="https://www.instagram.com/elementa.riding.academy"
+              href="https://www.instagram.com/elementa.riding.academy/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0 }}

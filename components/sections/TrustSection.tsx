@@ -38,6 +38,45 @@ const benefits = [
   },
 ];
 
+const instagramPosts = [
+  {
+    imgSrc: "/media/instagram/post1.png",
+    url: "https://www.instagram.com/elementa.riding.academy/p/DWOS_EbiCbV/",
+    label: "О Нас",
+    isReel: false,
+  },
+  {
+    imgSrc: "/media/instagram/post2.png",
+    url: "https://www.instagram.com/elementa.riding.academy/p/DX61PukiFLI/",
+    label: "Цены и Услуги",
+    isReel: false,
+  },
+  {
+    imgSrc: "/media/instagram/post3.png",
+    url: "https://www.instagram.com/elementa.riding.academy/p/DWOLh4XCOmg/",
+    label: "Наши кони",
+    isReel: false,
+  },
+  {
+    imgSrc: "/media/instagram/post4.png",
+    url: "https://www.instagram.com/elementa.riding.academy/reel/DYgv3J8IvRG/",
+    label: "История ученицы",
+    isReel: true,
+  },
+  {
+    imgSrc: "/media/instagram/post5.png",
+    url: "https://www.instagram.com/elementa.riding.academy/p/DYefM8Iog7i/",
+    label: "Скидки на фотосессии",
+    isReel: false,
+  },
+  {
+    imgSrc: "/media/instagram/post6.png",
+    url: "https://www.instagram.com/elementa.riding.academy/reel/DYRW7D-orjw/",
+    label: "Детский Horse Camp",
+    isReel: true,
+  },
+];
+
 export function TrustSection() {
   return (
     <section className="relative w-full bg-parchment paper-texture flex flex-col items-center">
@@ -83,7 +122,7 @@ export function TrustSection() {
           Мы в Instagram
         </div>
         <a 
-          href="https://www.instagram.com/elementa.riding.academy" 
+          href="https://www.instagram.com/elementa.riding.academy/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="font-canela text-3xl md:text-[40px] text-crimson hover:underline underline-offset-8 mb-16 inline-block"
@@ -92,30 +131,44 @@ export function TrustSection() {
         </a>
 
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-[960px] mx-auto">
-          {[...Array(6)].map((_, i) => (
+          {instagramPosts.map((post, i) => (
             <FadeUp key={i} delay={0}>
               <a 
-                href="https://www.instagram.com/elementa.riding.academy"
+                href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-square w-full bg-crimsonDark overflow-hidden flex items-center justify-center cursor-pointer"
+                className="group relative aspect-square w-full bg-crimsonDark overflow-hidden flex items-center justify-center cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <Image 
-                  src="/media/logo.png" 
-                  alt="Logo Placeholder" 
-                  width={80} 
-                  height={80} 
-                  className="opacity-30 invert transition-transform duration-700 group-hover:scale-110"
+                  src={post.imgSrc} 
+                  alt={post.label} 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 33vw"
                 />
                 
+                {/* Elegant Bottom Label & Reel Indicator (Visible by default, fades out on hover) */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-4 md:p-6 flex items-end justify-between transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                  <span className="font-canela text-white text-[14px] sm:text-[16px] md:text-[18px] tracking-wide font-medium text-left leading-tight">
+                    {post.label}
+                  </span>
+                  {post.isReel && (
+                    <span className="flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full w-8 h-8 flex-shrink-0 ml-2">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3" />
+                      </svg>
+                    </span>
+                  )}
+                </div>
+
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-ink/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
-                  <span className="font-sans text-sm text-white font-medium uppercase tracking-wider">
+                  <span className="font-sans text-xs md:text-sm text-white font-medium uppercase tracking-widest transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     Смотреть
                   </span>
                 </div>
