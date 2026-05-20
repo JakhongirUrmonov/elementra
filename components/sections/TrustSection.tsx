@@ -18,7 +18,7 @@ const benefits = [
   },
   {
     num: "03",
-    title: "4 уникальных коня",
+    title: "6 уникальных коней",
     desc: "От доброго тяжеловоза до спортивного потомка чемпионов — мы подберем идеального партнера для ваших целей.",
   },
   {
@@ -80,7 +80,7 @@ const instagramPosts = [
 export function TrustSection() {
   return (
     <section className="relative w-full bg-parchment paper-texture flex flex-col items-center">
-      
+
       {/* PART A — LANGUAGES BAND */}
       <div className="w-full bg-crimson h-[120px] flex items-center justify-center px-4 overflow-hidden relative">
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 w-full max-w-6xl">
@@ -121,9 +121,9 @@ export function TrustSection() {
         <div className="font-sans text-[11px] tracking-[0.35em] text-crimson uppercase mb-6">
           Мы в Instagram
         </div>
-        <a 
-          href="https://www.instagram.com/elementa.riding.academy/" 
-          target="_blank" 
+        <a
+          href="https://www.instagram.com/elementa.riding.academy/"
+          target="_blank"
           rel="noopener noreferrer"
           className="font-canela text-3xl md:text-[40px] text-crimson hover:underline underline-offset-8 mb-16 inline-block"
         >
@@ -133,20 +133,20 @@ export function TrustSection() {
         <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-[960px] mx-auto">
           {instagramPosts.map((post, i) => (
             <FadeUp key={i} delay={0}>
-              <a 
+              <a
                 href={post.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative aspect-square w-full bg-crimsonDark overflow-hidden flex items-center justify-center cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300"
               >
-                <Image 
-                  src={post.imgSrc} 
-                  alt={post.label} 
+                <Image
+                  src={post.imgSrc}
+                  alt={post.label}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 33vw"
                 />
-                
+
                 {/* Elegant Bottom Label & Reel Indicator (Visible by default, fades out on hover) */}
                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent p-4 md:p-6 flex items-end justify-between transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
                   <span className="font-canela text-white text-[14px] sm:text-[16px] md:text-[18px] tracking-wide font-medium text-left leading-tight">
