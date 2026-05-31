@@ -11,12 +11,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Elementa Riding Academy — Школа верховой езды в Праге',
-  description: 'Верховая езда, тренировки, прогулки и фотосессии в 20 минутах от Праги. Bojanovice 107. Запись: 778-071-177',
-  keywords: ['верховая езда Прага', 'конная школа Чехия', 'horse riding Prague', 'jezdectví Praha'],
+  description: 'Elementa Riding Academy — верховая езда, индивидуальные тренировки, прогулки и фотосессии с лошадьми в 20 минутах от Праги. Bojanovice 107. Запись: +420 778 071 177',
+  keywords: ['верховая езда Прага, конная школа Прага, конные прогулки Прага, фотосессия с лошадьми Прага, horse riding Prague, riding school Prague, jezdectví Praha, jízda na koni Praha, koně Praha-západ'],
   openGraph: {
-    title: 'Elementa Riding Academy',
-    description: 'Верховая езда, тренировки, прогулки и фотосессии в 20 минутах от Праги.',
-    images: ['/media/hero-poster.jpg'],
+    title: 'Elementa Riding Academy | Верховая езда в 20 минутах от Праги',
+    description: 'Индивидуальные тренировки, прогулки и фотосессии с лошадьми рядом с Прагой. Bojanovice 107. Запись: +420 778 071 177',
+    images: ['https://elementa-ra.cz/media/hero-poster.jpg'],
     locale: 'ru_RU',
     type: 'website',
   },
