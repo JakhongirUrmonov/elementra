@@ -26,7 +26,7 @@ export function Contact() {
 
             {/* Info Rows */}
             <div className="w-full flex flex-col gap-5 mt-6 mb-10">
-              <InfoRow icon={<MapPinIcon />} text="Bojanovice 107 — 20 минут от Праги" />
+              <InfoRow icon={<MapPinIcon />} text="Horse Academy, Radimovice 26, 251 69 Petříkov" />
               <InfoRow icon={<PhoneIcon />} text="778-071-177" />
               <InfoRow 
                 icon={<InstagramIcon />} 
@@ -54,7 +54,7 @@ export function Contact() {
           <FadeUp delay={0.3} className="absolute inset-0 w-full h-full">
             {/* Custom Map Filter to match parchment tone */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.123!2d14.3!3d49.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9432655d8f33%3A0xcb156b8259b3bb6!2sBojanovice%20107%2C%20252%2006%20Bojanovice%2C%20Czechia!5e0!3m2!1sen!2scz!4v1700000000000!5m2!1sen!2scz"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.2095410303327!2d14.615034576948386!3d49.93240937149788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b88b24c2af871%3A0x2f10bcd59be12ee9!2sHorse%20Academy!5e0!3m2!1scs!2scz!4v1783668829180!5m2!1scs!2scz"
               className="absolute inset-0 w-full h-full border-0 grayscale sepia-[0.3] hue-rotate-[340deg] contrast-125 pointer-events-auto"
               allowFullScreen
               loading="lazy"
